@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+	padding: 0px;
+	margin: 0px; 
+	cursor: crosshair;
+}
+game{
+	height: 646px;
+	width: 1280px;
+	margin-left: calc((100vw - 1280px)/2); 
+	margin-top: calc((100vh - 646px)/2); 
+} 

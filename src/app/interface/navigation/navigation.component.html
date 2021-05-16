@@ -1,0 +1,136 @@
+<!--<div id="secondContent">-->
+
+<div class="topcont" style="grid-template-columns: 150px {{topGridColumns}} 150px; pointer-events: auto;">
+
+	<div  *ngFor="let count of taskSectors; let i=index;let first = first; let last = last"> 
+ 
+		<div *ngIf="first" class="first dashed">
+
+			<span class="striped"></span>
+			<div class="p">{{taskSectors[i][0]}}</div><br>
+			<p>{{taskSectors[i][1]}}</p>
+
+		</div>
+
+		<div *ngIf="!(first||last)">
+
+	 		<div class="topsec" style="
+	grid-template-columns: repeat({{taskSectors[i].length}}, calc(100%/{{taskSectors[i].length}})); background: {{colorSector(i)}}; height: 30px;">
+
+				<div *ngFor="let count of taskSectors[i], let ii=index" class="toptask" style="background: {{colorTab(ii)}};">
+
+					{{taskSectors[i][ii].name}}
+
+				</div>
+
+			</div>
+
+			<div class="topsec" style="
+grid-template-columns: repeat({{taskSectors[i].length}}, calc(100%/{{taskSectors[i].length}})); height: 10px;">
+
+				<div *ngFor="let count of taskSectors[i], let iii=index" class="toptaskprogress" style="background-image: linear-gradient(
+	    -270deg, 
+	    yellow,
+	    yellow {{taskSectors[i][iii].prog}}%,
+	    grey {{taskSectors[i][iii].prog}}%, 
+	    grey
+  ); opacity: 0.5;">
+
+					<!--{{taskSectors[i][iii].name}}-->
+				</div>
+
+			</div>
+
+		</div>
+
+	 	<div *ngIf="last"  class="last dashed">
+
+	 		<span class="striped"></span>
+	 		<div class="p">{{taskSectors[i][0]}}</div><br> 
+	 		<p>{{taskSectors[i][1]}}</p>
+
+		</div>
+
+ 	</div>
+
+</div>
+
+<div class="messagecont" style="pointer-events: none;">
+
+	<div class="messagecolleft" (mouseover)="messegesFocus(0)" (mouseout)="unfocus()" style="pointer-events: auto;">
+
+		<marquee #marqLeft behavior="scroll" direction="up" scrollamount="1" height="100%" width="100%" scrolldelay="300">
+
+			<div class="messageLeft">
+				<p>achievements  and perspectives</p>
+			</div>
+
+		    <div *ngFor="let count of messageLeft, let iml = index" class="messageLeft">
+
+ 			   	<h2>{{messageLeft[iml].header}}</h2>
+
+    			<p *ngFor="let count of messageLeft[iml].paragraph, let itml = index">{{messageLeft[iml].paragraph[itml].text}}</p>
+
+   			</div>
+
+   			<div class="messageLeft">
+   				<p>more</p>
+   			</div>
+
+		</marquee>
+
+	</div>
+
+	<div style="pointer-events: none;"> </div>
+
+	<div class="messagecolright" (mouseover)="messegesFocus(1)" (mouseout)="unfocus()" style="pointer-events: auto;">
+
+		<marquee #marqRight behavior="scroll" direction="up" scrollamount="1" height="100%" width="100%" scrolldelay="300">
+    
+			<div class="messageRight">
+				<p>problems</p>
+			</div>
+
+			<div *ngFor="let count of messageRight, let iml = index" class="messageRight">
+
+		    	<h2>{{messageLeft[iml].header}}</h2>
+
+		    	<p *ngFor="let count of messageRight[iml].paragraph, let itml = index">{{messageLeft[iml].paragraph[itml].text}}</p>
+
+		    </div>
+
+		    <div class="messageRight">
+		    	<p>more</p>
+		    </div>
+
+		</marquee>
+
+	</div>
+
+	<div style="" >
+
+	</div>
+
+	<div style="" >
+
+	</div>
+
+	<div style="" >
+
+	</div>
+
+</div>
+
+<div class="menubar" style="grid-template-columns: repeat({{mainButtons[buttonHandler].length}}, calc(100%/{{mainButtons[buttonHandler].length}} - 4px)); pointer-events: auto;">
+
+	<div *ngFor="let count of mainButtons[buttonHandler]; let bi=index, let bfirst=first" class="dashed buttons">
+
+		<span class="striped" (click)="buttonClicked(buttonHandler,bi)"></span>
+
+		<p>{{mainButtons[buttonHandler][bi].name}}</p>
+
+	</div>
+
+</div>
+
+<!--</div>-->

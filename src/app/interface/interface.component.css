@@ -1,21 +1,27 @@
-graphic{
+splash{
+	padding: 0px;
+	margin: 0px;  
+	height: 100%;
+	position: absolute; 
+	width: 100%;
+	cursor: crosshair;
+}
+navigation{
 	padding: 0px;
 	margin: 0px;  
 	position: absolute; 
 	top: 0; 
 	bottom: 0; 
 	width: 100%;
+	max-height: 100%;
 	cursor: crosshair;
 }
-interface{
-	padding: 0px;
-	margin: 10px;  
-	position: absolute; 
-	top: 0; 
-	bottom: 0; 
-	width: calc(100% - 20px);
-	cursor: default;
-	pointer-events: none;
-	cursor: default
+tools{
+
 }
- 
+ui{
+
+}
+menu{
+
+} 
